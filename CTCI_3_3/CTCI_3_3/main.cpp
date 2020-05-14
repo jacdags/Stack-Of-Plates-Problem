@@ -9,20 +9,13 @@
 #include <vector>
 #include <iostream>
 
-int main(int argc, const char * argv[]) {
-    
-    
-    int totalItems = 0;
-    int totalNumOfStacks = ceil(totalItems/MAXSTACK);
-    
+int main(int argc, const char * argv[])
+{
     int input = 0;
     int data;
     
     vector<Stack> masterStack;
-    //master stack is a stack of stacks
-    //create a stack and push onto master stack
-    //once sub stack height = 5, create another stack and push onto master stack
-    
+
     while(input != -1)
     {
         cout << "(1) Push\n(2) Peek\n(3) Pop\n(4) isEmpty\nChoose command: ";
@@ -36,6 +29,7 @@ int main(int argc, const char * argv[]) {
             {
                 masterStack.push_back(Stack());
                 masterStack.back().push(data);
+                cout << "Created stack " << masterStack.size() << endl;
             }
             cout << "pushed " << data << endl << endl;
 
@@ -47,15 +41,18 @@ int main(int argc, const char * argv[]) {
         else if(input == 3)
         {
             int popped = masterStack.back().pop();
+            int size = masterStack.size();
             
             if(popped == -1)
             {
                 masterStack.pop_back();
                 masterStack.back().pop();
+                cout << "Removed stack " << size << endl;
             }
             if(masterStack.back().peek() == -1)
             {
                 masterStack.pop_back();
+                cout << "Removed stack " << size << endl;
             }
             
             cout << "Popped " << popped << endl << endl;
