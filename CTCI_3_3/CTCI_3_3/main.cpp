@@ -41,7 +41,7 @@ int main(int argc, const char * argv[])
         else if(input == 3)
         {
             int popped = masterStack.back().pop();
-            int size = masterStack.size();
+            int size = (int)masterStack.size();
             
             if(popped == -1)
             {

@@ -15,7 +15,7 @@ bool Stack::push(int x)
     if(top == MAXSTACK)
         return false;
     
-    a[top] = x;
+    stackArray[top] = x;
     return true;
 }
 
@@ -30,7 +30,7 @@ int Stack::pop()
         top--;
     }
     
-    int data = a[top];
+    int data = stackArray[top];
     top--;
     return data;
 }
@@ -43,10 +43,10 @@ int Stack::peek()
     }
     else if(top == MAXSTACK)
     {
-        return a[top-1];
+        return stackArray[top-1];
     }
     
-    return a[top];
+    return stackArray[top];
 }
 
 bool Stack::isEmpty()

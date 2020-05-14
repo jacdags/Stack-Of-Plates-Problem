@@ -22,7 +22,7 @@ class Stack {
 
     
 public:
-    int a[MAXSTACK]; // Maximum size of Stack
+    int stackArray[MAXSTACK]; // Maximum size of Stack
    
     Stack() { top = -1; }
 
