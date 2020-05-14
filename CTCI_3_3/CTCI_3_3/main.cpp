@@ -5,79 +5,9 @@
 //  Created by Jacqueline Dagdigian on 5/12/20.
 //  Copyright © 2020 Jacqueline Dagdigian. All rights reserved.
 //
-
-#include <stdio.h>
-#include <iostream>
-#include <cmath>
+#include "Stack.hpp"
 #include <vector>
-
-using namespace std;
-
-#define MAXSTACK 5
-#define MAXPLATES 100
-
-class Stack {
-    int top;
-
-    
-public:
-    int a[MAXSTACK]; // Maximum size of Stack
-   
-    Stack() { top = -1; }
-
-    bool push(int x);
-    int pop();
-    int peek();
-    bool isEmpty();
-    
-};
-
-bool Stack::push(int x)
-{
-    top++;
-    
-    if(top == MAXSTACK)
-        return false;
-    
-    a[top] = x;
-    return true;
-}
-
-int Stack::pop()
-{
-    if(top < 0)
-    {
-        return -1;
-    }
-    if(top == MAXSTACK)
-    {
-        top--;
-    }
-    
-    int data = a[top];
-    top--;
-    return data;
-}
-
-int Stack::peek()
-{
-    if(top < 0)
-    {
-        return -1;
-    }
-    else if(top == MAXSTACK)
-    {
-        return a[top-1];
-    }
-    
-    return a[top];
-}
-
-bool Stack::isEmpty()
-{
-    return top < 0;
-}
-
+#include <iostream>
 
 int main(int argc, const char * argv[]) {
     
